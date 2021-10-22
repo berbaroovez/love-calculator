@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 import Web3 from "web3";
 import ENS, { getEnsAddress } from "@ensdomains/ensjs";
+import { NextSeo } from "next-seo";
 
 const minABI = [
   // balanceOf
@@ -194,6 +195,31 @@ export default function Home() {
 
   return (
     <HomeDiv>
+      <NextSeo
+        title="Ethereum Love Calculator"
+        description="Find your soul mate on chain"
+        canonical="https://www.lovecalculator.xyz"
+        openGraph={{
+          url: "https://www.lovecalculator.xyz",
+          title: "Ethereum Love Calculator",
+          description: "Find your soul mate on chain",
+          images: [
+            {
+              url: "https://www.lovecalculator.xyz/header.png",
+              width: 800,
+              height: 600,
+              alt: "Og Image Alt",
+              type: "image/jpeg",
+            },
+          ],
+          site_name: "Love Calculator",
+        }}
+        twitter={{
+          handle: "@berbaroovez",
+
+          cardType: "summary_large_image",
+        }}
+      />
       <LoveZone>
         <TextZone>
           <NameZone>
